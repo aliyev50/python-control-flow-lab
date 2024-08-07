@@ -44,15 +44,13 @@ def check_letter():
     if len(letter) == 1 and letter.isalpha():
         letter = letter.lower()
         vowels = 'aeiou'
+        consonant = 'bcdfghjklmnpqstvwxyz'
         if letter in vowels:
             print(f"The letter {letter} is a vowel.")
-        else:
+        elif letter in consonant:
             print(f"The letter {letter} is a consonant")
         else:
             print("Invalid input. Please enter a single alpabetical letter.")
-
-def check_letter():
-    # Your control flow logic goes here
 
 # Call the function
 check_letter()
@@ -75,16 +73,16 @@ check_letter()
 # - Use a conditional statement to check if the age meets the minimum voting age requirement.
 
 def check_voting_eligibility():
-   try:
-    age = int(input("Please enter your age: ").strip())
-    if age < 0:
-        print("invalid age. Please enter a non-megative number.")
-    else:
-        voting_age = 18
-        if age >= voting_age:
-            print("You are eligible to vote.")
+    try:
+        age = int(input("Please enter your age: ").strip())
+        if age < 0:
+            print("invalid age. Please enter a non-megative number.")
         else:
-            print("You are not eligible to vote.")
+            voting_age = 18
+        if age >= voting_age:
+                print("You are eligible to vote.")
+        else:
+                print("You are not eligible to vote.")
     except ValueError:
         print("Invalid input. Please enter a valid age.")
 
@@ -146,10 +144,10 @@ calculate_dog_years()
 # - Use logical operators (`AND`, `OR`, `NOT`) in your if statements to handle multiple conditions.
 
 def weather_advice():
-   cold = input("Is it cold? (yes/no): ").strip().lower()
-   raining = input("Is it raining? (yes/no): ").strip().lower()
+    cold = input("Is it cold? (yes/no): ").strip().lower()
+    raining = input("Is it raining? (yes/no): ").strip().lower()
 
-   if cold == "yes" and raining == "yes":
+    if cold == "yes" and raining == "yes":
         print("Wear a waterproof coat.")
     elif cold == "yes" and raining == "no":
         print("Wear a warm coat.")
@@ -195,7 +193,7 @@ def determine_season():
 
     try:
         day = int(day)
-         if month in winter:
+        if month in winter:
             if (month == "Dec" and day >= 21) or month in ("Jan", "Feb") or (month == "Mar" and day <= 19):
                 season = "Winter"
         if month in spring:
